@@ -48,6 +48,7 @@ class Handler extends AbstractProcessingHandler
                 ]),
                 'ignore_errors' => true,
                 'max_redirects' => 0,
+                'header'        => 'Content-type: application/x-www-form-urlencoded',
             ),
         )));
 
