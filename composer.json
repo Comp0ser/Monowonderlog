@@ -1,0 +1,17 @@
+{
+    "name": "hosttech/monowonderlog",
+    "authors": [
+        {
+            "name": "Sebastian Kaiser",
+            "email": "skaiser@hosttech.ch"
+        }
+    ],
+    "require": {
+        "monolog/monolog": "^1.22"
+    },
+    "autoload": {
+        "psr-4": {
+            "hosttech\\": "src/"
+        }
+    }
+}
