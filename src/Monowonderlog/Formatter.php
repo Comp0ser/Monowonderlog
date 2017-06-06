@@ -29,7 +29,7 @@ class Formatter implements FormatterInterface
 
             $additionals[] = [
                 'title' => 'input',
-                'content' => \Request::all(),
+                'content' => print_r(\Request::all(), 1),
             ];
         }
 
