@@ -3,6 +3,7 @@
 namespace hosttech\Monowonderlog;
 
 use Monolog\Handler\AbstractProcessingHandler;
+use Monolog\Logger;
 
 class Handler extends AbstractProcessingHandler
 {
