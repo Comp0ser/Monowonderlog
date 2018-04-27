@@ -46,20 +46,22 @@ class Handler extends AbstractProcessingHandler
      */
     protected function write(array $record)
     {
-        $return = @file_get_contents($this->url, null, stream_context_create(array(
-            'http' => array(
-                'method'        => 'POST',
-                'content'       => http_build_query([
-                    'json' => $record['formatted']
-                ]),
-                'ignore_errors' => true,
-                'max_redirects' => 0,
-                'header'        => 'Content-type: application/x-www-form-urlencoded',
-            ),
-        )));
+        if (!empty($this->url)) {
+            $return = @file_get_contents($this->url, null, stream_context_create(array(
+                'http' => array(
+                    'method'        => 'POST',
+                    'content'       => http_build_query([
+                        'json' => $record['formatted']
+                    ]),
+                    'ignore_errors' => true,
+                    'max_redirects' => 0,
+                    'header'        => 'Content-type: application/x-www-form-urlencoded',
+                ),
+            )));
 
-        if ($return === false) {
-            throw new \RuntimeException(sprintf('Could not connect to %s', $this->url));
+            if ($return === false) {
+                throw new \RuntimeException(sprintf('Could not connect to %s', $this->url));
+            }
         }
     }
 
