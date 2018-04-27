@@ -26,13 +26,18 @@ class Handler extends AbstractProcessingHandler
      */
     public function __construct($level = Logger::DEBUG, $bubble = true, $url, $identifier)
     {
-        $this->setLevel($level);
-        $this->bubble = $bubble;
+        parent::__construct($level, $bubble);
 
         $this->url = $url;
         $this->identifier = $identifier;
     }
 
+    public function getFormatter()
+    {
+        $this->formatter = $this->getDefaultFormatter();
+        return $this->formatter;
+    }
+    
     /**
      * Writes the record down to the log of the implementing handler
      *
