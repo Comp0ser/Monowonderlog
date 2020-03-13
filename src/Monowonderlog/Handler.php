@@ -68,7 +68,7 @@ class Handler extends AbstractProcessingHandler
     /**
      * {@inheritDoc}
      */
-    protected function getDefaultFormatter()
+    protected function getDefaultFormatter() : Monolog\Formatter\FormatterInterface
     {
         return new Formatter($this->identifier);
     }
