@@ -44,7 +44,7 @@ class Handler extends AbstractProcessingHandler
      * @param  array $record
      * @return void
      */
-    protected function write(array $record)
+    protected function write(array $record) : void
     {
         if (!empty($this->url)) {
             $return = @file_get_contents($this->url, null, stream_context_create(array(
