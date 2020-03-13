@@ -2,6 +2,7 @@
 
 namespace hosttech\Monowonderlog;
 
+use Monolog\Formatter\FormatterInterface;
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
 
@@ -32,7 +33,7 @@ class Handler extends AbstractProcessingHandler
         $this->identifier = $identifier;
     }
 
-    public function getFormatter() : Monolog\Formatter\FormatterInterface
+    public function getFormatter() : FormatterInterface
     {
         $this->formatter = $this->getDefaultFormatter();
         return $this->formatter;
@@ -68,7 +69,7 @@ class Handler extends AbstractProcessingHandler
     /**
      * {@inheritDoc}
      */
-    protected function getDefaultFormatter() : Monolog\Formatter\FormatterInterface
+    protected function getDefaultFormatter() : FormatterInterface
     {
         return new Formatter($this->identifier);
     }
