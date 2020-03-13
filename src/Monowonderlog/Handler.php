@@ -32,7 +32,7 @@ class Handler extends AbstractProcessingHandler
         $this->identifier = $identifier;
     }
 
-    public function getFormatter()
+    public function getFormatter() : Monolog\Formatter\FormatterInterface
     {
         $this->formatter = $this->getDefaultFormatter();
         return $this->formatter;
